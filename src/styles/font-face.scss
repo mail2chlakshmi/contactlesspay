@@ -1,0 +1,52 @@
+@font-face {
+  font-family: 'Carhop Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Carhop Sans Light'), local('Carhop Sans-Light'),
+    url(~styles/fonts/carhopsans-light-web.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Carhop Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Carhop Sans Regular'), local('Carhop Sans-Regular'),
+    url(~styles/fonts/carhopsans-regular-web.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Carhop Sans';
+  font-style: normal;
+  font-weight: 485;
+  font-display: swap;
+  src: local('Carhop Sans Regular'), local('Carhop Sans-Regular'),
+    url(~styles/fonts/carhopsans-medium-web.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Carhop Sans';
+  font-style: normal;
+  font-weight: 657;
+  font-display: swap;
+  src: local('Carhop Sans Bold'), local('Carhop Sans-Bold'),
+    url(~styles/fonts/carhopsans-bold-web.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Carhop Sans';
+  font-style: normal;
+  font-weight: 787;
+  font-display: swap;
+  src: local('Carhop Sans ExtraBold'), local('Carhop Sans-ExtraBold'),
+    url(~styles/fonts/carhopsans-extrabold-web.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
+    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/Favicon_16x16.png" />
+    <!-- <meta http-equiv=“Content-Security-Policy” content=”default-src ‘self’; img-src *”> -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://int.api.firstdata.com/;"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/Favicon_32x32.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!-- uCom SDK -->
+    <script src="https://int.api.firstdata.com/ucom/v2/static/v2/js/ucom-sdk.js"></script>
+    <title>Sonic Drive-In - Contactless Pay</title>
+    <script>
+  // Callback function
+  function returnCallBack(response) { 
+      console.log('UCOM response:', response); 
+      // error handle here
+      //1 lauching the hosted page (token expired......)
+      //2 user enter the credit card details failue on return back
+      /* Kill the uCom UI */
+          ucomSDK.stop();
+      /* Do rest of the flow here */
+  }
+  //Configurations object
+  //  var gethttp = new XMLHttpRequest();
+  //  gethttp.onreadystatechange = 
+  //   function() {
+  //     if(this.readyState == 4 && this.status ==200) {
+  //       var myObj = JSON.parse(this.responseText);
+  //       console.log(myObj);
+  //     }
+  //   };
+  // gethttp.open("GET", 'htps://int.api.firstdata.com/ucom/v1/hosted-pages/pages', true);
+  // gethttp.send();
+
+  var configs = {
+  "accessToken": "8raMcf86FCXHDGWz9xIYnp99tsNV",
+  "apiKey": "SaQbr7DGi9nftHahC5wIlIQAN5XcVS3K",
+  // "fdCustomerId": "1234",
+  "pageUrl": "https://int.api.firstdata.com/ucom/v1/hosted-pages/pages/028b00c6-a11f-4765-ba42-2785175d83da",
+  "mountId": "ucom-container", 
+  "encryptionKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlbTw6gIuXJSPFkCNtwz8vGX2vuxM6kdcTfjLMg2+IwT9dilpNKPCV+YK8Lc21lxhbo6lb+WnkrGgqQuFC9DTQ+3LKURX/yUJrHOEzOVVIHyhyJIP++k0fs2qGuOwcQI14JE8xQjLsFfD2FC8ihg0rs2F7k1bO1k5O+L4jPddghKFyFvlRMWvKLW+MOGZTVsbWlW2oE3Ta1BJl5mpxKvO47IcLNSXJl2v1Q5hRVQ4jYuPmeFL7IKQlPb7cbDmb9ju8yJmIbHwLi11B5Qj5wFVBAHynl7pwTyCXK2+525iqoFyyGR3Fgr5Yi2XYH6oODSLU69mF3IZKEly5l5T29r7gwIDAQAB",
+  "redirectUrl": "https://appsrv-sonic-dev01-contactless-payment-dpp-be.azurewebsites.net/api/redirect/payment",
+   "debug": true,
+  /*If ThreatMetrix feature should be enabled on HP then following params must be passed*/
+  // "orgId":"<Organization-Id>", "sessionId":"<Session-Id>", 
+  /*extraObjects attribute */ 
+  // "extraObjects": {
+  // /*Passing billing Address */
+  // "billingAddress": { "type": "work",
+  // "streetAddress": "100 universal city plaza", "locality": "Hollywood",
+  // "region": "CA",
+  // "postalCode": "98290",
+  // "country": "US",
+  // "formatted": "100 universal city plaza, Hollywood, CA 98290 USA",
+  // "primary": true },
+  // /*Passing fd AccountId for preferred card selection in Vaulted cards use case */
+  // "preferredCard": {
+  // "fdAccountId": "8a7f7fb770427dbf01704518eee40019",
+  // } }
+  }
+  /*
+  ucomSDK.init(<configs>, <callbackMethod>, <isLoggingEnabled>); 
+  @params
+      configs - configurations object, 
+      callbackMethod - callback method, 
+      isLoggingEnabled - pass true to enable console debug logging(true/false) */
+  //Initialize the uCom SDK with configurations
+  function myFunction(p1, p2) {
+    console.log('UCOM output:', p1 * p2);
+    var result= p1 * p2;
+    document.getElementById("demo").innerHTML = result;
+    ucomSDK.init(configs, returnCallBack, true); 
+     //Start the uCom UI
+    ucomSDK.start();
+  }
+          </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!-- <div id="ucom-container"><iframe></iframe></div>
+      <p id="demo"></p>
+      <input type="button" value="refresh" onclick="myFunction(4,3)"> -->
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "content_security_policy": "script-src 'self' https://int.api.firstdata.com/; object-src 'self' https://int.api.firstdata.com/; frame-src 'self' https://int.api.firstdata.com/;",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "Favicon_16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "Favicon_32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "Favicon_48x48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

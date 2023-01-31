@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3c78eb14.css",
+    "main.js": "/static/js/main.34a455d1.js",
+    "static/js/27.d96169b0.chunk.js": "/static/js/27.d96169b0.chunk.js",
+    "static/media/carhopsans-extrabold-web.woff2": "/static/media/carhopsans-extrabold-web.d75adc99725115185590.woff2",
+    "static/media/carhopsans-bold-web.woff2": "/static/media/carhopsans-bold-web.3e5aa53e014108ce2273.woff2",
+    "static/media/carhopsans-medium-web.woff2": "/static/media/carhopsans-medium-web.bf9b766fa2d3ec293ecd.woff2",
+    "static/media/carhopsans-regular-web.woff2": "/static/media/carhopsans-regular-web.9048453f4fffc6a24bc2.woff2",
+    "static/media/carhopsans-light-web.woff2": "/static/media/carhopsans-light-web.a2ce18863d4296ce3439.woff2",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.3c78eb14.css",
+    "static/js/main.34a455d1.js"
+  ]
+}

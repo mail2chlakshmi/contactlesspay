@@ -1,0 +1,27 @@
+@import '../styles/colors.scss';
+
+@mixin link {
+  color: $c-text-active;
+  text-decoration: underline;
+  background: transparent;
+  padding: 0;
+  text-transform: none;
+  font-weight: 400;
+  display: inline-block;
+  transition: color 0.3s;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: $c-text-hover;
+    text-decoration: none;
+  }
+
+  &View {
+    &Block {
+      display: block;
+      color: $c-text-main;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+  }
+}

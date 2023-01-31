@@ -1,0 +1,52 @@
+$sizes: (
+  xs:  (             max: 379px ),
+  s:   ( min: 380px, max: 767px ),
+  xxl: ( min: 1921px            ),
+);
+
+@function joinQueryString($queryParts, $separator) {
+  $query: "";
+  @each $part in $queryParts {
+    @if ($query != "") {
+      $query: $query + $separator;
+    }
+
+    $query: $query + $part ;
+  }
+
+  @return $query;
+}
+
+@mixin media($sizeNames...) {
+  $conditions: ();
+  @each $sizeName in $sizeNames {
+    $rangeCondition: ();
+
+    @each $rangeName, $range in $sizes {
+      @if ($rangeName == $sizeName) {
+        $min: map-get($range, 'min');
+        $max: map-get($range, 'max');
+
+        @if ($min != null) {
+          $rangeCondition: append($rangeCondition, "(min-width: " + $min + ")");
+        }
+        @if ($max != null) {
+          $rangeCondition: append($rangeCondition, "(max-width: " + $max + ")");
+        }
+      }
+    }
+
+    @if (length($rangeCondition) > 0) {
+      $conditions: append($conditions, joinQueryString($rangeCondition, " and "));
+    }
+  }
+
+  @if (length($conditions) > 0) {
+    $query: "all and " + joinQueryString($conditions, ", all and ");
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

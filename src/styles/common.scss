@@ -1,0 +1,21 @@
+@import './styles/link.scss';
+@import './styles/media.scss';
+
+:root {
+  font-family: 'Carhop Sans', verdana, geneva, tahoma, sans-serif;
+  font-size: 16px;
+
+  @include media(xxl) {
+    font-size: 2vmin;
+  }
+}
+
+body {
+  margin: 0;
+  background: $c-bg-main;
+  color: $c-text-main;
+}
+
+a {
+  @include link;
+}
